@@ -17,8 +17,8 @@ using namespace std;
 //Execution time!
 int main(int argc, char** argv) {
 //Define Variables
-    float qtrval = .25f, nklval = .05f, dimval = .10f, total;
-    int numqtr, numnkl, numdim;
+    float qtrval = .25f, nklval = .05f, dimval = .10f, total, penval = .01f;
+    int numqtr, numnkl, numdim, numpen;
     
     //Inputs
     cout << "Please input number of quarters: \n";
@@ -30,12 +30,15 @@ int main(int argc, char** argv) {
     cout << "Please input number of nickels: \n";
     cin >> numnkl;
     
+    cout << "Please input number of pennies: \n";
+    cin >> numpen;
+    
     //Calculations
     
-    total = (numqtr * qtrval) + (numdim * dimval) + (numnkl * nklval);
+    total = (numqtr * qtrval) + (numdim * dimval) + (numnkl * nklval) + (numpen * penval);
             
     //Outputs
-    cout << "The total value is " << total << " dollars.\n";
+    cout << "The total value is $" << total << " dollars.\n";
     
     //le Fin
     
