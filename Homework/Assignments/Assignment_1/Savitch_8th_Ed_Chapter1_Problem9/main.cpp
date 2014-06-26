@@ -19,8 +19,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Define Variables
     short grav = 32;
-    float time;
-    float dist;
+    float time, dist;
     
     //Inputs
     cout << "Enter time in seconds:\n";
@@ -31,7 +30,7 @@ int main(int argc, char** argv) {
     dist = dist / 2;
     
     //Output
-    cout << "The distance traveled would be " << dist << "\n";
+    cout << "The distance traveled would be " << dist << " feet.\n";
     
     //le Fin
     return 0;
