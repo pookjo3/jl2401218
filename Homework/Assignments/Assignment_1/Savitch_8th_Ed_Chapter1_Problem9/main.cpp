@@ -19,7 +19,7 @@ using namespace std;
 int main(int argc, char** argv) {
     //Define Variables
     short grav = 32;
-    unsigned int time;
+    float time;
     float dist;
     
     //Inputs
