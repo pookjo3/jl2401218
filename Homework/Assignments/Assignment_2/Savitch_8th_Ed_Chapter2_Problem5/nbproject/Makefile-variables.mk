@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=savitch_8th_ed_chapter2_problem1
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/savitch_8th_ed_chapter2_problem1
+CND_ARTIFACT_NAME_Debug=savitch_8th_ed_chapter2_problem5
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/savitch_8th_ed_chapter2_problem5
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=savitch8thedchapter2problem1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/savitch8thedchapter2problem1.tar
+CND_PACKAGE_NAME_Debug=savitch8thedchapter2problem5.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/savitch8thedchapter2problem5.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=savitch_8th_ed_chapter2_problem1
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/savitch_8th_ed_chapter2_problem1
+CND_ARTIFACT_NAME_Release=savitch_8th_ed_chapter2_problem5
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/savitch_8th_ed_chapter2_problem5
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=savitch8thedchapter2problem1.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/savitch8thedchapter2problem1.tar
+CND_PACKAGE_NAME_Release=savitch8thedchapter2problem5.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/savitch8thedchapter2problem5.tar
 #
 # include compiler specific variables
 #
