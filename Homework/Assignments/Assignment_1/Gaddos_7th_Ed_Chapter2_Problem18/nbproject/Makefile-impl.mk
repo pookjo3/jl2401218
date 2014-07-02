@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=EnergyDrink
+PROJECTNAME=Gaddos_7th_Ed_Chapter2_Problem18
 
 # Active Configuration
 DEFAULTCONF=Debug

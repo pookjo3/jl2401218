@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=energydrink
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/energydrink
+CND_ARTIFACT_NAME_Debug=gaddos_7th_ed_chapter2_problem18
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/gaddos_7th_ed_chapter2_problem18
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=energydrink.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/energydrink.tar
+CND_PACKAGE_NAME_Debug=gaddos7thedchapter2problem18.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/gaddos7thedchapter2problem18.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=energydrink
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/energydrink
+CND_ARTIFACT_NAME_Release=gaddos_7th_ed_chapter2_problem18
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/gaddos_7th_ed_chapter2_problem18
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=energydrink.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/energydrink.tar
+CND_PACKAGE_NAME_Release=gaddos7thedchapter2problem18.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/gaddos7thedchapter2problem18.tar
 #
 # include compiler specific variables
 #
