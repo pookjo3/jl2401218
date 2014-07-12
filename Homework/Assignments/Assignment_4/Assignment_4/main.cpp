@@ -6,6 +6,8 @@
 
 //System Libraries
 #include <iostream>
+#include <iomanip>
+#include <string.h>
 using namespace std;
 
 //User Libraries
@@ -13,6 +15,8 @@ using namespace std;
 //Global Constants
 const float LIT_GAL = .264179f;
 const float UNIV_GRAV = 6.673e-8f;
+const float CNVPDOL=1/100.0f;
+
 //Function Prototypes
 
 //Execution Starts Here!
@@ -30,6 +34,12 @@ int main(int argc, char** argv) {
         cout<<"Type 1 for Problem 1 from Savitch"<<endl;
         cout<<"Type 2 for Problem 2 from Savitch"<<endl;
         cout<<"Type 3 for Problem 4 from Savitch"<<endl;
+        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
+        cout<<"Type 5 for Problem 7 from Savitch"<<endl;
+        cout<<"Type 6 for Problem 9 from Savitch"<<endl;
+        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
+        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
+        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
         cout<<"Type 4 for Problem 5 from Savitch"<<endl;
         cin>>choice;
         
@@ -159,14 +169,174 @@ int main(int argc, char** argv) {
                 break;
             }case 5:{
                 //Declare Variables
-                float mass1, mass2, distance; //Masses are in grams and distance in centimeters
+                float mass1, mass2, distance, force; //Masses are in grams and distance in centimeters
                 
                 //Ask for inputs for mass and distance
                 cout<<"Please input the two masses in grams separated by a space.\n";
                 cin>>mass1>>mass2;
                 cout<<"Please enter a positive non zero distance in centimeters\n";
+                cin>>distance;
+                
+                //Calculate the force
+                force=(UNIV_GRAV*mass1*mass2)/distance;
+                
+                //Output the force
+                cout<<"The gravitational force between these two objects is equal to "<<force<<" dynes."<<endl;
+                break;
+            }case 6:{
+                //Declare Variables
+                float hatSize, jktSize, waist;
+                unsigned short weight, height, age;
+                
+                //Ask for inputs
+                cout<<"What is your weight in pounds? ";
+                cin>>weight;
+                
+                cout<<"What is your height in inches? ";
+                cin>>height;
+                
+                cout<<"What is your age? ";
+                cin>>age;
+                
+                //Calculate clothing sizes
+                hatSize= (weight/height)*2.9f;
+                
+                if (age>=40){
+                    int temp = ((age/10)-3); //Modifier for everyone over 40
+                    
+                    jktSize= static_cast<float>(height)*weight/288+(temp/8.0f);
+                } else{
+                    jktSize= static_cast<float>(height)*weight/288;
+                }
+                if (age>=30){
+                    int temp2 = ((age/2)-14);
+                    waist = weight/5.7f+temp2/10.0f;
+                } else{
+                    waist = weight/5.7f;
+                }
+                
+                //Output clothing sizes
+                cout<<"Your hat size is "<<hatSize<<endl;
+                cout<<"Your jacket size is "<<jktSize<<endl;
+                cout<<"Your waist size is "<<waist<<endl;
+                break;
+            }case 7:{
+                //Declare Variables
+                float hatSize, jktSize, waist, jktSize2, waist2;
+                unsigned short weight, height, age;
+                
+                //Ask for inputs
+                cout<<"What is your weight in pounds? ";
+                cin>>weight;
+                
+                cout<<"What is your height in inches? ";
+                cin>>height;
+                
+                cout<<"What is your age? ";
+                cin>>age;
+                
+                //Calculate clothing sizes
+                hatSize= (weight/height)*2.9f;
+                
+                if (age>=40){
+                    int temp = ((age/10)-3); //Modifier for everyone over 40
+                    
+                    jktSize= static_cast<float>(height)*weight/288+(temp/8.0f);
+                } else{
+                    jktSize= static_cast<float>(height)*weight/288;
+                }
+                if (age>=30){
+                    int temp2 = ((age/2)-14);
+                    waist = weight/5.7f+temp2/10.0f;
+                } else{
+                    waist = weight/5.7f;
+                }
+                
+                //Calculate future sizes
+                               
+                if (age+10>=40){
+                    int temp = ((age/10)-3); //Modifier for everyone over 40
+                    
+                    jktSize2= static_cast<float>(height)*weight/288+(temp/8.0f);
+                } else{
+                    jktSize2= static_cast<float>(height)*weight/288;
+                }
+                if (age+10>=30){
+                    int temp2 = ((age/2)-14);
+                    waist2 = weight/5.7f+temp2/10.0f;
+                } else{
+                    waist2 = weight/5.7f;
+                }
+                //Output clothing sizes
+                cout<<"Your hat size is "<<hatSize<<endl;
+                cout<<"Your jacket size is "<<jktSize<<endl;
+                cout<<"Your waist size is "<<waist<<endl;
+                cout<<"Your hat size in 10 years will be "<<hatSize<<endl;
+                cout<<"Your jacket size in 10 years will be "<<jktSize2<<endl;
+                cout<<"Your waist size in 10 years will be "<<waist2<<endl;
+                break;
+            }case 8:{
+                //Declare variables
+                unsigned short cstTwke=350;//350 pennies or $3.50
+                unsigned short total=0;//Amount tendered in pennies
+                unsigned short change;//Calculate change at the end
+                unsigned short nQuarters,nNickels,nDimes;//Number of coins to return
+                char vD=10,vN=5,vQ=25,vB=100;//Value of each coin
+                const int SIZE=8;
+                char dime[SIZE]="dime";
+                char nickel[SIZE]="nickel";
+                char quarter[SIZE]="quarter";
+                char dollar[SIZE]="dollar";
+                char coin[SIZE];
+
+                //Prompt user for purchase of Twinkie
+                cout<<"Twinkie's cost $3.50"<<endl;
+                cout<<"Input nickle, dime, quarter, and dollar"<<endl;
+                cout<<"until the purchase price is reached"<<endl;
+
+                //Loop and Input coins one by one
+                do{
+                    //Prompt user for the coin or bill
+                    cout<<endl<<endl<<"Input Coin or Bill"<<endl;
+                    cin>>coin;
+                    if(!strcmp(coin,dime))total+=vD;
+                    else if(strcmp(coin,nickel)==0)total+=vN;
+                    else if(!strcmp(coin,quarter))total+=vQ;
+                    else if(!strcmp(coin,dollar))total+=vB;
+                    else{
+                        cout<<"Not a real coin doofus."<<endl;
+                    }
+                    //Display the current total
+                    cout<<fixed<<showpoint<<setprecision(2);
+                    float display=total*CNVPDOL;//Display in dollars
+                    cout<<"Total amount tendered so far = $"<<display<<endl;
+
+                }while(total<cstTwke);
+
+                //Calculate the change and return
+                cout<<"Be happy ruining your health! :)"<<endl;
+                float display=(total-cstTwke)*CNVPDOL;//Display in dollars
+                cout<<"Your change is $"<<display<<endl;
+            }case 9:{
+                //Declare Variables
+                int startV, sumV=0;
+                
+                //Ask for inputs
+                cout<<"Type a positive integer: "<<endl;
+                cin>>startV;
+                
+                //Use for loop to get sum
+                for (int i=1; i <=startV; i++){
+                    sumV+=i;
+                }
+                
+                //Output
+                cout<<"The sum is "<<sumV<<endl;
+                break;
+            }case 10:{
+                //Declare Variables
             }default:{
-                cout<<"Exit Menu"<<endl<<endl;
+                cout<<"Exit Menu"<<endl;
             }
         };
     }while(choice>=1&&choice<=10);
