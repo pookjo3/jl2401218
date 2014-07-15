@@ -63,25 +63,19 @@ int getN(){
 
 //Solution to problem 1
 void problem1(){
-    cout<<"Solve for PI using infinite sequence"<<endl<<endl;
-    //Display exact values of PI
-    cout<<"Pi = "<<fixed<<setprecision(15)<<atan(1)*4<<endl<<endl;
-    //Declare variables
-    double approxPI=0;
-    //Ask how man terms in the sequence
-    int terms;
-    cout<<"How many terms to approximate PI"<<endl;
-    cout<<"Sequence = 4*(1/1-1/3+1/5-1/7+1/9-1/11+........)"<<endl;
-    cin>>terms;
-    //Calculate using the infinite sequence
-    char sign=-1;
-    for(int i=1;i<=terms;i+=2){
-        sign*=-1;
-        approxPI+=1.0/i*sign;
+    //Define Variables
+    int input;
+    
+    //Ask for inputs
+    cout<<"Please choose a positive number to display the countdown."<<endl;
+    cin>>input;
+    cout<<endl;
+    
+    //Start the loop to display
+    for (int i = input; i>0; i--){
+        cout<<setw(i)<<i<<endl;
     }
-    approxPI*=4;
-    //Output the approx ans
-    cout<<"The approximate value of PI = "<<approxPI<<endl<<endl;
+    cout<<endl;
 }
 
 //Solution to problem 2
@@ -121,7 +115,27 @@ void problem4(){
 
 //Solution to problem 5
 void problem5(){
-    cout<<"In problem # 5"<<endl<<endl;
+    //Declare variables
+    int hours; //hours worked
+    float payRate, totPay; //Rate of pay and total payment
+    
+    //Inputs
+    cout<<"How many hours did you work?"<<endl;
+    cin>>hours;
+    
+    cout<<"What is your pay rate?\n";
+    cin>>payRate;
+    
+    //Determine total payment
+    if (hours <=40){
+        totPay=hours*payRate;
+    }else if (hours>40&&hours<=50){
+        totPay=40*payRate+(hours-40)*(2*payRate);
+    }else if (hours>50){
+        totPay=40*payRate+10*(2*payRate)+(hours-50)*(3*payRate);
+    }
+    //Output total pay
+    cout<<"You earned $"<<totPay<<" this week."<<endl<<endl;
 }
 
 //Solution to problem 6
