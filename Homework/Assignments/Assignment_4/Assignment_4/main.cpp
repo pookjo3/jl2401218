@@ -37,10 +37,10 @@ int main(int argc, char** argv) {
         cout<<"Type 4 for Problem 5 from Savitch"<<endl;
         cout<<"Type 5 for Problem 7 from Savitch"<<endl;
         cout<<"Type 6 for Problem 9 from Savitch"<<endl;
-        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
-        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
-        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
-        cout<<"Type 4 for Problem 5 from Savitch"<<endl;
+        cout<<"Type 7 for Problem 10 from Savitch"<<endl;
+        cout<<"Type 8 for Problem 15 from Savitch"<<endl;
+        cout<<"Type 9 for Problem 1 from Savitch"<<endl;
+        cout<<"Type 10 for Problem 3 from Gaddis"<<endl;
         cin>>choice;
         
         //Place problem solutions in the switch statement
@@ -73,8 +73,8 @@ int main(int argc, char** argv) {
                 }while (rep=='y'||rep=='Y'); //Test for repeat
                 
                 break;
-            }case 2:{
-                                //Declare Variables
+            }case 2:{ //Miles per gallon calculator for 2 cars
+                //Declare Variables
                 float miles1, miles2, litG1, litG2, mpg1, mpg2, galG1, galG2;
                 char rep;
                 
@@ -117,7 +117,7 @@ int main(int argc, char** argv) {
                 }while (rep=='y'||rep=='Y'); //Test for repeat
                 cout<<endl<<endl;
                 break;
-            }case 3:{
+            }case 3:{ //Inflation Calculator
                 //Declare variables
                 float price1, price2, infRate;
                 char rep;
@@ -141,7 +141,7 @@ int main(int argc, char** argv) {
                 } while (rep=='y'||rep=='Y');
                 cout<<endl;
                 break;         
-            }case 4:{
+            }case 4:{ //Future inflation calculator
                  //Declare variables
                 float price1, price2, price3, infRate;
                 char rep;
@@ -167,7 +167,7 @@ int main(int argc, char** argv) {
                 } while (rep=='y'||rep=='Y');
                 cout<<endl;
                 break;
-            }case 5:{
+            }case 5:{ //Universal Gravitation
                 //Declare Variables
                 float mass1, mass2, distance, force; //Masses are in grams and distance in centimeters
                 
@@ -183,7 +183,7 @@ int main(int argc, char** argv) {
                 //Output the force
                 cout<<"The gravitational force between these two objects is equal to "<<force<<" dynes."<<endl;
                 break;
-            }case 6:{
+            }case 6:{ //Clothing Size Calc
                 //Declare Variables
                 float hatSize, jktSize, waist;
                 unsigned short weight, height, age;
@@ -220,7 +220,7 @@ int main(int argc, char** argv) {
                 cout<<"Your jacket size is "<<jktSize<<endl;
                 cout<<"Your waist size is "<<waist<<endl;
                 break;
-            }case 7:{
+            }case 7:{ //Future clothing size
                 //Declare Variables
                 float hatSize, jktSize, waist, jktSize2, waist2;
                 unsigned short weight, height, age;
@@ -275,7 +275,7 @@ int main(int argc, char** argv) {
                 cout<<"Your jacket size in 10 years will be "<<jktSize2<<endl;
                 cout<<"Your waist size in 10 years will be "<<waist2<<endl;
                 break;
-            }case 8:{
+            }case 8:{ //Twinkie vending machine
                 //Declare variables
                 unsigned short cstTwke=350;//350 pennies or $3.50
                 unsigned short total=0;//Amount tendered in pennies
@@ -317,7 +317,7 @@ int main(int argc, char** argv) {
                 cout<<"Be happy ruining your health! :)"<<endl;
                 float display=(total-cstTwke)*CNVPDOL;//Display in dollars
                 cout<<"Your change is $"<<display<<endl;
-            }case 9:{
+            }case 9:{ //Sum calculator
                 //Declare Variables
                 int startV, sumV=0;
                 
@@ -333,8 +333,19 @@ int main(int argc, char** argv) {
                 //Output
                 cout<<"The sum is "<<sumV<<endl;
                 break;
-            }case 10:{
+            }case 10:{ //Sea level calculator
                 //Declare Variables
+                    //None
+                
+                cout<<"The sea level is rising by 1.5 millimeters per year.\n"
+                        "This table will show how high it will rise in the next\n"
+                        "25 years if it continues."<<endl;
+                cout<<"Year:        mm risen:"<<endl;
+                for (int i=0; i<=25; i++){
+                    cout<<"Year "<<i<<" Millimeters risen: "<<i*1.5<<endl;
+                }
+                cout<<endl;
+                break;
             }default:{
                 cout<<"Exit Menu"<<endl;
             }
