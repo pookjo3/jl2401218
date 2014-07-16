@@ -107,7 +107,7 @@ void problem2(){
 //Solution to problem 3
 void problem3(){
     //Declare Variables
-    char pin[6];
+    std::string pin;
     unsigned short inBal,   //Initial Balance 
             debits,         //All debits for the month
             credits;        //All credits for the month
@@ -118,11 +118,11 @@ void problem3(){
     cout<<"Please enter your 4 digit PIN:"<<endl;
     cin>>pin;
     
-    while (!(str.size(pin)==4)){
-        cout<<"Please input a 4 digit PIN:"<<endl;
+    while (!(pin.size()==4)){
+        cout<<"Please enter a valid 4 digit PIN:"<<endl;
         cin>>pin;
     }
-    
+   
     cout<<"What is your initial balance?"<<endl;
     cin>>inBal;
     
@@ -136,10 +136,10 @@ void problem3(){
     if(debits>(credits+inBal)){     //If balance is negative
         totBal=credits+inBal-debits-27.75f;
         
-        cout<<"Your account has been overdrawn. A fee of "<<endl;
-              "$27.75 has been applied. In order to charge"<<endl;
-              "more debits to your account, please zero out"<<endl;
-              "the balance and add more credit. Thank you."<<endl<<endl;
+        cout<<endl<<"Your account has been overdrawn. A fee of "<<endl;
+        cout<<"$27.75 has been applied. In order to charge"<<endl;
+        cout<<"more debits to your account, please zero out"<<endl;
+        cout<<"the balance and add more credit. Thank you."<<endl<<endl;
     }else{                          //If balance is positive
         totBal=credits+inBal-debits;
     }
@@ -150,7 +150,63 @@ void problem3(){
 
 //Solution to problem 4
 void problem4(){
-    cout<<"In problem # 4"<<endl<<endl;
+    //Declare Variables
+    unsigned int hours;
+    float bill;
+    char pack;
+    
+    cout<<fixed<<setprecision(2);
+    //Ask for inputs
+    
+    cout<<"How many hours did you use the internet?"<<endl;
+    cin>>hours;
+    
+    cout<<"Please choose your package."<<endl;
+    cout<<"Package A: $19.95 per month for 5 hours access, plus $0.75 per hour "<<endl;
+    cout<<"after that for 20 hours. All additional hours are $1 per hour."<<endl;
+    cout<<"Package B: $24.95 per month, 15 hours access.  Additional hours"<<endl;
+    cout<<"are $0.75 up to 25 hours then $0.50 for each hour above this limit."<<endl;
+    cout<<"Package C: $29.75 per month unlimited access."<<endl;
+    cin>>pack;
+    
+    //Calculate bill
+    switch (pack){
+        case 'a':
+        case 'A':
+            if (hours<=5){
+                bill=19.95f;
+            }else if (hours>5&&hours<=20){
+                bill=19.95f+(hours-5)*.75f;
+            }else if (hours>20){
+                bill=19.95f+15*.75f+(hours-20);
+            }
+            cout<<"Your monthly bill is $"<<bill<<endl;
+            if (hours >=12){
+                cout<<"Consider upgrading to a better package to save money.";
+            }
+            break;
+            
+        case 'b':
+        case 'B':
+            if (hours<=15){
+                bill=24.95f;
+            }else if (hours>15&&hours<=25){
+                bill=24.95f+(hours-15)*.75f;
+            }else if (hours>25){
+                bill=24.95f+10*.75f+(hours-25)*.5f;
+            }
+            cout<<"Your monthly bill is $"<<bill<<endl;
+            if (hours >=22){
+                cout<<"Consider upgrading to a better package to save money.";
+            }
+            break;
+        case 'c':
+        case 'C':
+            bill=29.75f;
+            break;
+        default:
+            cout<<"Not a valid package.";
+    }
 }
 
 //Solution to problem 5
