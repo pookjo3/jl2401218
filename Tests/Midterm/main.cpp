@@ -81,33 +81,13 @@ void problem1(){
 
 //Solution to problem 2
 void problem2(){
-    cout<<"Random Integration to find PI again"<<endl<<endl;
-    //Display exact values of PI
-    cout<<"Pi = "<<fixed<<setprecision(15)<<atan(1)*4<<endl<<endl;
-    //Declare variables
-    int nDarts,inCircle=0,maxRandom=pow(2,31);
-    float approxPI=0;
-    //Ask question as to number of darts
-    cout<<"During the dart game, How many darts do you want to throw"<<endl;
-    cin>>nDarts;
-    //Set the random number seed
-    srand(static_cast<unsigned int>(time(0)));
-    //Start playing the game
-    for(int throwDart=1;throwDart<=nDarts;throwDart++){
-        float x=1.0f*rand()/maxRandom;
-        float y=1.0f*rand()/maxRandom;
-        if((x*x+y*y)<=1)inCircle++;
-    }
-    //Calculate the approx value of PI
-    approxPI=4.0f*inCircle/nDarts;
-    //Output the result
-    cout<<"The Approximate value of PI = "<<approxPI<<endl<<endl;
+    
 }
 
 //Solution to problem 3
 void problem3(){
     //Declare Variables
-    std::string pin;
+    int pin[6];
     unsigned short inBal,   //Initial Balance 
             debits,         //All debits for the month
             credits;        //All credits for the month
@@ -116,11 +96,11 @@ void problem3(){
     //Input info and validate pin
     
     cout<<"Please enter your 4 digit PIN:"<<endl;
-    cin>>pin;
+    cin >> pin;
     
-    while (!(pin.size()==4)){
+    while (!((sizeof(pin[6]))/sizeof(pin[0])==4)){
         cout<<"Please enter a valid 4 digit PIN:"<<endl;
-        cin>>pin;
+        cin >> pin;
     }
    
     cout<<"What is your initial balance?"<<endl;
@@ -236,7 +216,36 @@ void problem5(){
 
 //Solution to problem 6
 void problem6(){
-    cout<<"In problem # 6"<<endl<<endl;
+    cout<<fixed<<setprecision(7);
+    
+    //Declare Variables
+    unsigned int terms, xIn;
+    float est, t=1, sum=1, actual, error;
+    
+    //Enter inputs
+    cout<<"What power to raise e to?"<<endl;
+    cin>>xIn;
+    cout<<"How many terms do you want?"<<endl;
+    cin>>terms;
+    
+    //Loop to approximate e^x
+    for (int i=1; i<=terms; i++){
+        est=i;   
+        t=t*xIn/est;   
+        sum=sum+t;   
+        }
+    //Calculate actual e
+     actual=exp(xIn);
+     
+    //Calculate error
+     
+     
+     error=(actual-sum)/actual;
+    
+    //Output
+    cout<<"Estimation: "<<sum<<endl;
+    cout<<"Actual answer: "<<actual<<endl;
+    cout<<"Error in %: "<<error<<endl<<endl;
 }
 
 //Exit Comment
