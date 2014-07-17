@@ -81,13 +81,58 @@ void problem1(){
 
 //Solution to problem 2
 void problem2(){
+    //Declare Variables
+    char dig4[5];
     
+    cout<<"Please enter a 4 digit number."<<endl;
+    cin>>dig4;
+    
+    //Determine characters inside array
+    for (int i=0; i<4; i++){
+        switch (dig4[i]){
+            case '0':
+                cout<<"0: "<<endl;
+                break;
+            case '1':
+                cout<<"1: *"<<endl;
+                break;
+            case '2':
+                cout<<"2: **"<<endl;
+                break;
+            case '3':
+                cout<<"3: ***"<<endl;
+                break;
+            case '4':
+                cout<<"4: ****"<<endl;
+                break;
+            case '5':
+                cout<<"5: *****"<<endl;
+                break;
+            case '6':
+                cout<<"6: ******"<<endl;
+                break;
+            case '7':
+                cout<<"7: *******"<<endl;
+                break;
+            case '8':
+                cout<<"8: ********"<<endl;
+                break;
+            case '9':
+                cout<<"9: *********"<<endl;
+                break;
+            default:
+                cout<<dig4[i]<<": ?"<<endl;
+        }
+    }
+    cout<<endl<<endl;
 }
 
 //Solution to problem 3
 void problem3(){
     //Declare Variables
-    int pin[6];
+    cout<<fixed<<setprecision(2);
+    
+    std::string pin;
     unsigned short inBal,   //Initial Balance 
             debits,         //All debits for the month
             credits;        //All credits for the month
@@ -98,10 +143,11 @@ void problem3(){
     cout<<"Please enter your 4 digit PIN:"<<endl;
     cin >> pin;
     
-    while (!((sizeof(pin[6]))/sizeof(pin[0])==4)){
+    while (!(pin.size()==4)){
         cout<<"Please enter a valid 4 digit PIN:"<<endl;
         cin >> pin;
     }
+    unsigned short pinNum = atoi(pin.c_str()); //convert to unsigned short for later use
    
     cout<<"What is your initial balance?"<<endl;
     cin>>inBal;
@@ -141,12 +187,12 @@ void problem4(){
     cout<<"How many hours did you use the internet?"<<endl;
     cin>>hours;
     
-    cout<<"Please choose your package."<<endl;
     cout<<"Package A: $19.95 per month for 5 hours access, plus $0.75 per hour "<<endl;
     cout<<"after that for 20 hours. All additional hours are $1 per hour."<<endl;
     cout<<"Package B: $24.95 per month, 15 hours access.  Additional hours"<<endl;
     cout<<"are $0.75 up to 25 hours then $0.50 for each hour above this limit."<<endl;
-    cout<<"Package C: $29.75 per month unlimited access."<<endl;
+    cout<<"Package C: $29.75 per month unlimited access."<<endl<<endl;
+    cout<<"Please choose your package."<<endl;
     cin>>pack;
     
     //Calculate bill
@@ -162,7 +208,7 @@ void problem4(){
             }
             cout<<"Your monthly bill is $"<<bill<<endl;
             if (hours >=12){
-                cout<<"Consider upgrading to a better package to save money.";
+                cout<<"Consider upgrading to a better package to save money."<<endl;
             }
             break;
             
@@ -177,16 +223,18 @@ void problem4(){
             }
             cout<<"Your monthly bill is $"<<bill<<endl;
             if (hours >=22){
-                cout<<"Consider upgrading to a better package to save money.";
+                cout<<"Consider upgrading to a better package to save money."<<endl;
             }
             break;
         case 'c':
         case 'C':
             bill=29.75f;
+            cout<<"Your monthly bill is $"<<bill<<endl;
             break;
         default:
             cout<<"Not a valid package.";
     }
+    cout<<endl;
 }
 
 //Solution to problem 5
@@ -216,36 +264,34 @@ void problem5(){
 
 //Solution to problem 6
 void problem6(){
-    cout<<fixed<<setprecision(7);
+    cout<<setprecision(7);
     
     //Declare Variables
-    unsigned int terms, xIn;
+    unsigned int terms, x;
     float est, t=1, sum=1, actual, error;
     
     //Enter inputs
     cout<<"What power to raise e to?"<<endl;
-    cin>>xIn;
+    cin>>x;
     cout<<"How many terms do you want?"<<endl;
     cin>>terms;
     
     //Loop to approximate e^x
     for (int i=1; i<=terms; i++){
         est=i;   
-        t=t*xIn/est;   
+        t=t*x/est;   
         sum=sum+t;   
-        }
+    }
     //Calculate actual e
-     actual=exp(xIn);
+     actual=exp(x);
      
     //Calculate error
-     
-     
-     error=(actual-sum)/actual;
+    error=(actual-sum)/actual;
     
     //Output
     cout<<"Estimation: "<<sum<<endl;
     cout<<"Actual answer: "<<actual<<endl;
-    cout<<"Error in %: "<<error<<endl<<endl;
+    cout<<"Error in %: "<<error*100<<endl<<endl;
 }
 
 //Exit Comment
