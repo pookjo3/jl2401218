@@ -129,9 +129,35 @@ void problem2(){
 
 //Problem 3
 void problem3(){
+    const int SIZE=5;
+    string salsa[SIZE]={"Mild", "Medium", "Sweet", "Hot", "Zesty"};
+    int jars[SIZE];
+    int total=0, highest=0, lowest=1e9, highN, lowN;
     
+    for (int i=0; i<SIZE; i++){
+        cout<<"Please enter the number of jars sold of the "<<salsa[i]<<" salsa: ";
+        cin>>jars[i];
+        if (jars[i]>highest){
+            highest=jars[i];
+            highN=i;
+        }
+        if (jars[i]<lowest){
+            lowest=jars[i];
+            lowN=i;
+        }
+        total+=jars[i];
+    }
+    for (int i = 0; i<SIZE; i++){
+        cout<<salsa[i]<<" salsa: "<<jars[i]<<" jars"<<endl;
+    }
+    cout<<"Total Salsa Sold: "<<total<<" jars"<<endl;
+    cout<<"Best Selling Salsa: "<<salsa[highN]<<endl;
+    cout<<"Worst Selling Salsa: "<<salsa[lowN]<<endl<<endl;
 }
 void problem4(){
+    //Declare Variables
+    const int MONKEY=3, DAYS=7;
+    int food[MONKEY][DAYS];
     
 }
 void problem5(){
