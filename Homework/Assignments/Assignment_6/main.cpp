@@ -157,17 +157,175 @@ void problem3(){
 void problem4(){
     //Declare Variables
     const int MONKEY=3, DAYS=7;
-    int food[MONKEY][DAYS];
+    float food[MONKEY][DAYS];
+    float avg, least=1e8, great=0, total=0;
     
-}
+    //Loop to input for monkey 1
+    for (int i=0; i<DAYS; i++){
+        cout<<"Please input the amount of food eaten by monkey 1 on day "<<i+1<<":"<<endl;
+        cin>>food[0][i];
+        if (food[0][i]>great){
+            great=food[0][i];
+        }
+        if (food[0][i]<least){
+            least=food[0][i];
+        }
+        total+=food[0][i];
+    }
+    //Loop to input for monkey 2
+    for (int i=0; i<DAYS; i++){
+        cout<<"Please input the amount of food eaten by monkey 2 on day "<<i+1<<":"<<endl;
+        cin>>food[1][i];
+        if (food[1][i]>great){
+            great=food[1][i];
+        }
+        if (food[1][i]<least){
+            least=food[1][i];
+        }
+        total+=food[1][i];
+    }
+    //Loop to input for monkey 3
+    for (int i=0; i<DAYS; i++){
+        cout<<"Please input the amount of food eaten by monkey 3 on day "<<i+1<<":"<<endl;
+        cin>>food[2][i];
+        if (food[2][i]>great){
+            great=food[2][i];
+        }
+        if (food[2][i]<least){
+            least=food[2][i];
+        }
+        total+=food[2][i];
+
+    }
+    avg=total/21;
+    cout<<"Average Food Eaten: "<<avg<<" Pounds"<<endl;
+    cout<<"Least Amount Eaten: "<<least<<" Pounds"<<endl;
+    cout<<"Most Amount Eaten:  "<<great<<" Pounds"<<endl<<endl;
+}       
 void problem5(){
+    //Declare Variables
+    const int DIV=6, QUART=4;
+    float sales[DIV][QUART];
+    float tot=0, incC, highest=0, highD;
     
+    cout<<"Quarter 1:"<<endl;
+    
+    for (int i=0; i<DIV; i++){
+        cout<<"What were the sales for Division "<<i+1<<"?"<<endl;
+        cin>>sales[i][0];
+        tot+=sales[i][0];
+        
+        if (sales[i][0]>highest){
+            highest=sales[i][0];
+            highD=i+1;
+        }
+    }
+    for (int i=0; i<DIV; i++){
+        cout<<"Sales for Division "<<i+1<<": $"<<sales[i][0]<<endl;
+    }
+    cout<<"Total Sales in Quarter 1: $"<<tot<<endl;
+    cout<<"Division "<<highD<<" had the highest sales."<<endl;
+    
+    cout<<"Quarter 2"<<endl;
+    tot=0; highest=0;
+    
+    for (int i=0; i<DIV; i++){
+        cout<<"What were the sales for Division "<<i+1<<"?"<<endl;
+        cin>>sales[i][1];
+        tot+=sales[i][1];
+        
+        if (sales[i][1]>highest){
+            highest=sales[i][1];
+            highD=i+1;
+        }
+    }
+    for (int i=0; i<DIV; i++){
+        cout<<"Sales for Division "<<i+1<<": $"<<sales[i][1]<<endl;
+        cout<<"Change for Division "<<i+1<<":$"<<sales[i][1]-sales[i][0]<<endl;
+    }
+    cout<<"Total Sales in Quarter 2: $"<<tot<<endl;
+    cout<<"Average Sales: $"<<tot/6<<endl;
+    cout<<"Division "<<highD<<" had the highest sales."<<endl;
+    
+    cout<<"Quarter 3"<<endl;
+    tot=0; highest=0;
+    
+    for (int i=0; i<DIV; i++){
+        cout<<"What were the sales for Division "<<i+1<<"?"<<endl;
+        cin>>sales[i][2];
+        tot+=sales[i][2];
+        
+        if (sales[i][2]>highest){
+            highest=sales[i][2];
+            highD=i+1;
+        }
+    }
+    for (int i=0; i<DIV; i++){
+        cout<<"Sales for Division "<<i+1<<": $"<<sales[i][2]<<endl;
+        cout<<"Change for Division "<<i+1<<":$"<<sales[i][2]-sales[i][1]<<endl;
+    }
+    cout<<"Total Sales in Quarter 3: $"<<tot<<endl;
+    cout<<"Average Sales: $"<<tot/6<<endl;
+    cout<<"Division "<<highD<<" had the highest sales."<<endl;
+    
+    cout<<"Quarter 4"<<endl;
+    tot=0; highest=0;
+    
+    for (int i=0; i<DIV; i++){
+        cout<<"What were the sales for Division "<<i+1<<"?"<<endl;
+        cin>>sales[i][3];
+        tot+=sales[i][3];
+        
+        if (sales[i][2]>highest){
+            highest=sales[i][3];
+            highD=i+1;
+        }
+    }
+    for (int i=0; i<DIV; i++){
+        cout<<"Sales for Division "<<i+1<<": $"<<sales[i][3]<<endl;
+        cout<<"Change for Division "<<i+1<<":$"<<sales[i][3]-sales[i][2]<<endl;
+    }
+    cout<<"Total Sales in Quarter 4: $"<<tot<<endl;
+    cout<<"Average Sales: $"<<tot/6<<endl;
+    cout<<"Division "<<highD<<" had the highest sales."<<endl;
 }
 void problem6(){
+    //Declare Variables
+    const int SIZE=7;
+    int empID[SIZE]={5458845,4520125,7895122,8777541,8451277,1302850,7580489};
+    int hours[SIZE];
+    float payRate[SIZE];
+    float wages[SIZE];
     
+    for (int i=0; i<SIZE; i++){
+        cout<<"Please enter hours worked by employee #"<<empID[i]<<": ";
+        cin>>hours[i];
+        
+        cout<<"Please enter the Pay Rate for employee #"<<empID[i]<<": ";
+        cin>>payRate[i];
+        
+        wages[i]=hours[i]*payRate[i];
+    }
+    for (int i=0; i<SIZE; i++){
+        cout<<empID[i]<<":"<<setw(7)<<"$"<<wages[i]<<endl;
+    }
 }
 void problem7(){
+    //Variables
+    const int SIZE=20;
+    char correct[SIZE]={'B', 'D', 'A', 'A', 'C', 'A', 'B', 'A', 'C', 'D', 'B', 'C', 'D', 'A', 'D', 'C', 'C', 'B', 'D', 'A'};
+    char answer[SIZE];
+    int inC[SIZE];
+    int wrong;
     
+    for (int i=0; i<SIZE; i++){
+        cout<<"Please input answer for Question "<<i+1<<": ";
+        cin>>answer[i];
+        if (!(answer[i]==correct[i])){
+            wrong++;
+            inC[]
+        }
+    }
 }
 void problem8(){
     
