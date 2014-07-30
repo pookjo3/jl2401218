@@ -323,12 +323,127 @@ void problem7(){
         cin>>answer[i];
         if (!(answer[i]==correct[i])){
             wrong++;
-            inC[]
+            inC[i]=1;
+        }
+    }
+    if (wrong<=5){
+        cout<<"You passed."<<endl;
+        
+    }else{
+        cout<<"You failed, you got "<<wrong<<" wrong answers."<<endl;
+    }
+    for (int i=0; i<20; i++){
+        if (inC[i]=1){
+            cout<<"You got number "<<i+1<<"wrong."<<endl;
         }
     }
 }
 void problem8(){
+    const int STUDENTS=5;
+    const int TESTS=4;
+    string name[STUDENTS];
+    int avg, score0[TESTS];
+    int score1[TESTS], score2[TESTS], score3[TESTS], score4[TESTS], tot=0; 
+    char grade[STUDENTS];
     
+    for (int i=0; i<STUDENTS; i++){
+        cout<<"Please input the name of student "<<i+1<<": ";
+        cin>>name[i];
+    }
+    cout<<name[0]<<endl;
+    for (int i=0; i<TESTS; i++){
+        cout<<"What grade did "<<name[0]<<" get on test "<<i+1<<"? ";
+        cin>>score0[i];
+        tot+=score0[i];
+    }
+    avg=tot/5;
+    if (avg>=90){
+        grade[0]='A';
+    }else if (avg>=80){
+        grade[0]='B';
+    }else if (avg>=70){
+        grade[0]='C';
+    }else if (avg>=60){
+        grade[0]='D';
+    }else{
+        grade[0]='F';
+    }
+    tot=0;
+    cout<<name[1]<<endl;
+    for (int i=0; i<TESTS; i++){
+        cout<<"What grade did "<<name[1]<<" get on test "<<i+1<<"? ";
+        cin>>score1[i];
+        tot+=score1[i];
+    }
+    avg=tot/5;
+    if (avg>=90){
+        grade[1]='A';
+    }else if (avg>=80){
+        grade[1]='B';
+    }else if (avg>=70){
+        grade[1]='C';
+    }else if (avg>=60){
+        grade[1]='D';
+    }else{
+        grade[1]='F';
+    }
+    tot=0
+    cout<<name[2]<<endl;
+    for (int i=0; i<TESTS; i++){
+        cout<<"What grade did "<<name[2]<<" get on test "<<i+1<<"? ";
+        cin>>score2[i];
+        tot+=score2[i];
+    }
+    avg=tot/5;
+    if (avg>=90){
+        grade[2]='A';
+    }else if (avg>=80){
+        grade[2]='B';
+    }else if (avg>=70){
+        grade[2]='C';
+    }else if (avg>=60){
+        grade[2]='D';
+    }else{
+        grade[2]='F';
+    }
+    tot=0;
+    cout<<name[3]<<endl;
+    for (int i=0; i<TESTS; i++){
+        cout<<"What grade did "<<name[3]<<" get on test "<<i+1<<"? ";
+        cin>>score3[i];
+        tot+=score3[i];
+    }
+    avg=tot/5;
+    if (avg>=90){
+        grade[3]='A';
+    }else if (avg>=80){
+        grade[3]='B';
+    }else if (avg>=70){
+        grade[3]='C';
+    }else if (avg>=60){
+        grade[3]='D';
+    }else{
+        grade[3]='F';
+    }
+    tot=0;
+    cout<<name[3]<<endl;
+    for (int i=0; i<TESTS; i++){
+        cout<<"What grade did "<<name[3]<<" get on test "<<i+1<<"? ";
+        cin>>score3[i];
+        tot+=score3[i];
+    }
+    avg=tot/5;
+    if (avg>=90){
+        grade[3]='A';
+    }else if (avg>=80){
+        grade[3]='B';
+    }else if (avg>=70){
+        grade[3]='C';
+    }else if (avg>=60){
+        grade[3]='D';
+    }else{
+        grade[3]='F';
+    }
 }
 void problem9(){
     
